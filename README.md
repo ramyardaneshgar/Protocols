@@ -7,7 +7,7 @@ I explored how legacy protocols—like Telnet, FTP, POP3, and SMTP—can expose 
 
 ---
 
-## Task 2: Sniffing Attack
+## Sniffing Attack
 
 Sniffing refers to capturing packets that traverse a network. If the protocol is unencrypted (cleartext), the contents—including usernames and passwords—can be directly observed.
 
@@ -36,17 +36,16 @@ This validated that credentials were sent in plaintext over the network.
 
 ---
 
-## Task 2 Questions
 
-**2.1** What do you need to add to the command `sudo tcpdump` to capture only Telnet traffic?  
+What do you need to add to the command `sudo tcpdump` to capture only Telnet traffic?  
 **Answer**: `port 23`
 
-**2.2** What is the simplest display filter you can use with Wireshark to show only IMAP traffic?  
+What is the simplest display filter you can use with Wireshark to show only IMAP traffic?  
 **Answer**: `imap`
 
 ---
 
-## Task 3: Man-in-the-Middle (MITM) Attack
+##  Man-in-the-Middle (MITM) Attack
 
 **Concept**: MITM occurs when an attacker intercepts and potentially alters traffic between two parties who believe they are communicating directly. It targets the *integrity* of the communication.
 
@@ -56,10 +55,10 @@ This validated that credentials were sent in plaintext over the network.
 
 **Answering Questions**:
 
-**3.1** How many different interfaces does Ettercap offer?  
+How many different interfaces does Ettercap offer?  
 **Answer**: 3
 
-**3.2** In how many ways can you invoke Bettercap?  
+In how many ways can you invoke Bettercap?  
 **Answer**: 3
 
 **Lessons Learned**:
@@ -68,7 +67,7 @@ This validated that credentials were sent in plaintext over the network.
 
 ---
 
-## Task 4: Encryption with TLS/SSL
+## Encryption with TLS/SSL
 
 **Concept**: TLS (Transport Layer Security) ensures confidentiality and integrity at the presentation layer of the OSI model. It replaces SSL and is used to encrypt protocols like HTTP (becomes HTTPS), SMTP, POP3, and FTP.
 
@@ -78,7 +77,7 @@ This validated that credentials were sent in plaintext over the network.
 3. Client validates the certificate and sends a pre-master key.
 4. Both switch to encrypted communication using a shared session key.
 
-**Realization**: Even if an attacker intercepts traffic, without access to the negotiated key, they cannot decrypt the contents.
+Even if an attacker intercepts traffic, without access to the negotiated key, they cannot decrypt the contents.
 
 **4.1** DNS can also be secured using TLS. What is the three-letter acronym of the DNS protocol that uses TLS?  
 **Answer**: DoT (DNS over TLS)
@@ -90,7 +89,7 @@ This validated that credentials were sent in plaintext over the network.
 
 ---
 
-## Task 5: SSH and SCP
+## SSH and SCP
 
 **Concept**: SSH provides a secure remote shell with encryption and authentication, typically over port 22. It supports both password-based and key-based authentication. SCP is a file transfer mechanism that runs over SSH.
 
@@ -155,7 +154,7 @@ Hydra discovered that the password for the user `lazie` on IMAP was `butterfly`.
 
 ---
 
-## Task 7 & 8: Summary and Lessons Learned
+## Summary and Lessons Learned
 
 I explored how sniffing, MITM, and password attacks exploit insecure protocols and misconfigurations. For each:
 
